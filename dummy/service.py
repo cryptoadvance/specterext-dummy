@@ -8,7 +8,7 @@ class DummyService(Service):
     logo = "dummy/img/dummy_logo.jpeg"
     desc = "Where a Dummy grows bigger."
     has_blueprint = True
-    blueprint_module = "mypackage.controller"
+    blueprint_module = "dummy.controller"
     devstatus = devstatus_alpha
 
     # TODO: As more Services are integrated, we'll want more robust categorization and sorting logic

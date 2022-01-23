@@ -1,5 +1,5 @@
 from cryptoadvance.specter.services.service import Service, devstatus_alpha
-
+from dummy.service import Service
 
 class DummyService(Service):
     id = "dummy"
