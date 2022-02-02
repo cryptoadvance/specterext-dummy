@@ -1,6 +1,7 @@
-{% extends "base.jinja" %}
-
-{% block main %}
+{% extends "dummy/components/dummy_tab.jinja" %}
+{% block title %}Settings{% endblock %}
+{% set tab = 'index' %}
+{% block content %}
     <style>
         .tagline {
             font-style: italic;
@@ -74,7 +75,7 @@
             vertical-align: text-bottom;
         }
     </style>
-    <img src="{{ url_for(service.id +'_endpoint' + '.static', filename=service.logo) }}" width="300"/>
+    <br><br>
     <div class="tagline">&ldquo;Dummyservice 4thewin.&rdquo;</div>
 {% endblock %}
 
