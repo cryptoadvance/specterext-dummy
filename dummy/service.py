@@ -1,6 +1,6 @@
 import logging
 
-from cryptoadvance.specter.services.service import Service, devstatus_alpha
+from cryptoadvance.specter.services.service import Service, devstatus_alpha, devstatus_prod
 # A SpecterError can be thrown and will be shown to the user as a red banner
 from cryptoadvance.specter.specter_error import SpecterError
 from flask import current_app as app
@@ -17,6 +17,7 @@ class DummyService(Service):
     has_blueprint = True
     blueprint_module = "dummy.controller"
     devstatus = devstatus_alpha
+    piggyback = False
 
     # TODO: As more Services are integrated, we'll want more robust categorization and sorting logic
     sort_priority = 2
