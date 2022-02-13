@@ -1,23 +1,23 @@
 import logging
 
 from cryptoadvance.specter.services.service import Service, devstatus_alpha, devstatus_prod
-# A SpecterError can be thrown and will be shown to the user as a red banner
+# A SpecterError can be raised and will be shown to the user as a red banner
 from cryptoadvance.specter.specter_error import SpecterError
 from flask import current_app as app
 from cryptoadvance.specter.wallet import Wallet
 
 logger = logging.getLogger(__name__)
 
-class DummyService(Service):
-    id = "dummy"
-    name = "Dummy Service"
-    icon = "dummy/img/ghost.png"
-    logo = "dummy/img/dummy_logo.jpeg"
-    desc = "Where a Dummy grows bigger."
+class {{ext.id | camelcase }}Service(Service):
+    id = "{{ext.id}}"
+    name = "{{ext.id | camelcase}} Service"
+    icon = "{{ext.id }}/img/ghost.png"
+    logo = "{{ext.id }}/img/dummy_logo.jpeg"
+    desc = "Where a {{ext.id }} grows bigger."
     has_blueprint = True
-    blueprint_module = "dummy.controller"
+    blueprint_module = "{{ext.org}}.specterext.{{ext.id }}.controller"
     devstatus = devstatus_alpha
-    piggyback = False
+    isolated_client = {{ ext.isolated_client }}
 
     # TODO: As more Services are integrated, we'll want more robust categorization and sorting logic
     sort_priority = 2

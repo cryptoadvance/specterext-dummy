@@ -1,4 +1,4 @@
-{% extends "base.jinja" %}
+{% extends "dummy/base.jinja" %}
 {% block main %}
     <img src="{{ url_for(service.id +'_endpoint' + '.static', filename=service.logo) }}" width="300"/>    
     {% from 'dummy/components/dummy_menu.jinja' import dummy_menu with context %}

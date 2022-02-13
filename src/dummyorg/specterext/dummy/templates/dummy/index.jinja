@@ -1,4 +1,7 @@
-{% extends "dummy/components/dummy_tab.jinja" %}
+<< if isolated_client >>
+<html> <body> Hello <=self.id => </body></html>
+<< else >>
+{% extends "<=ext.id =>/components/<=ext.id =>_tab.jinja" %}
 {% block title %}Settings{% endblock %}
 {% set tab = 'index' %}
 {% block content %}
@@ -76,7 +79,7 @@
         }
     </style>
     <br><br>
-    <div class="tagline">&ldquo;Dummyservice 4thewin.&rdquo;</div>
+    <div class="tagline">&ldquo; <=ext.id | camelcase =>Service 4thewin.&rdquo;</div>
 {% endblock %}
 
 
@@ -85,3 +88,4 @@
     <script>
     </script>
 {% endblock %}
+<< endif >>

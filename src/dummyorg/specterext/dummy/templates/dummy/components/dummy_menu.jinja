@@ -1,11 +1,11 @@
 {% from 'components/menu_item.jinja' import menu_item %}
 
 {# 
-    vaultoro_menu - Tabs menu to navigate between the vaultoro screens.
+    <=ext.id =>_menu - Tabs menu to navigate between the <=ext.id => screens.
     Parameters:
-    - active_menuitem: Current active tab. Options: 'general', 'bitcoin_core', 'auth'.
+    - active_menuitem: Current active tab. Options: 'general', 'settings', ...
  #}
-{% macro dummy_menu(active_menuitem) -%}
+{% macro <=ext.id =>_menu(active_menuitem) -%}
 	<nav class="row collapse-on-mobile">
 		{{ menu_item(service.id, 'index', 'Main', active_menuitem, isLeft=true) }}
 		{{ menu_item(service.id, 'settings_get', 'Settings', active_menuitem, isRight=true) }}
