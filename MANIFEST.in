@@ -1,0 +1,5 @@
+recursive-include src/{{ext.org}}/specterext/{{ext.id}}/templates *
+recursive-include src/{{ext.org}}/specterext/{{ext.id}}/static *
+recursive-include src/{{ext.org}}/specterext/{{ext.id}}/*/LC_MESSAGES *.mo
+recursive-include src/{{ext.org}}/specterext/{{ext.id}}/translations/*/LC_MESSAGES *.po
+include requirements.txt
