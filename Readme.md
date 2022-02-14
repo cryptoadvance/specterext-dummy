@@ -1,19 +1,19 @@
-This is a minimal extension which should get you started if you want to contribute to specter via an 
+This is a template repository for a minimal extension which should get you started if you want to contribute to specter via an 
 extension.
 
 # Get it to run
 
 In oder to use this:
 ```
-git clone git@github.com:cryptoadvance/specterext-dummy.git
-cd specterext-dummy
-pip3 install virtualenv
-virtualenv --python=python3 .env
-source .env/bin/activate
-pip3 install -r requirements.txt
-python3 -m cryptoadvance.specter server --config DevelopmentConfig --debug
-# point your browser to http://localhost:25441
-# "choose Services" --> dummy
+mkdir specterext-myextension && cd specterext-myextension
+# Will work with version > 1.8.1 
+# pip3 install virtualenv
+# virtualenv --python=python3 .env
+# source .env/bin/activate
+# pip3 install cryptoadvance.specter
+source ../specter-desktop/.env/bin/activate # assuming you have a specter-desktop checked out there
+python3 -m cryptoadvance.specter ext gen
+# Follow the instructions ...
 ```
 
 ![](./docs/images/dummy_service.gif)
