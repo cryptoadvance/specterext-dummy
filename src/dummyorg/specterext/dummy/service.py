@@ -12,7 +12,7 @@ class {{ext.id | camelcase }}Service(Service):
     id = "{{ext.id}}"
     name = "{{ext.id | camelcase}} Service"
     icon = "{{ext.id }}/img/ghost.png"
-    logo = "{{ext.id }}/img/dummy_logo.jpeg"
+    logo = "{{ext.id }}/img/logo.jpeg"
     desc = "Where a {{ext.id }} grows bigger."
     has_blueprint = True
     blueprint_module = "{{ext.org}}.specterext.{{ext.id }}.controller"
