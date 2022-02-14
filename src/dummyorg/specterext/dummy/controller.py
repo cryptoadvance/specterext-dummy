@@ -54,5 +54,5 @@ def settings_post():
     used_wallet_alias = request.form.get("used_wallet")
     if used_wallet_alias != None:
         wallet = current_user.wallet_manager.get_by_alias(used_wallet_alias)
-    return redirect(url_for(f"{{ ext.id | camelcase}}Service.get_blueprint_name()}.settings_get"))
+    return redirect(url_for(f"{ {{ ext.id | camelcase}}Service.get_blueprint_name()}.settings_get"))
 {% endif %}
