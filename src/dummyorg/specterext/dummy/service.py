@@ -42,3 +42,8 @@ class {{ext.id | camelcase }}Service(Service):
             # Referenced an unknown wallet
             # TODO: keep ignoring or remove the unknown wallet from service_data?
             return
+
+    @classmethod
+    def set_associated_wallet(cls, wallet: Wallet):
+        """Set the Specter `Wallet` that is currently associated with this Service"""
+        cls.update_current_user_service_data({cls.SPECTER_WALLET_ALIAS: wallet.alias})

@@ -24,6 +24,22 @@ def index():
     )
 
 {% if not ext.isolated_client %}
+
+
+@{{ ext.id }}_endpoint.route("/transactions")
+@login_required
+@user_secret_decrypted_required
+def transactions():
+    # The wallet currently configured for ongoing autowithdrawals
+    wallet: Wallet = {{ ext.id | camelcase }}Service.get_associated_wallet()
+
+    return render_template(
+        "{{ ext.id }}/transactions.jinja",
+        wallet=wallet,
+        services=app.specter.service_manager.services,
+    )
+
+
 @{{ ext.id }}_endpoint.route("/settings", methods=["GET"])
 @login_required
 @user_secret_decrypted_required
@@ -54,5 +70,6 @@ def settings_post():
     used_wallet_alias = request.form.get("used_wallet")
     if used_wallet_alias != None:
         wallet = current_user.wallet_manager.get_by_alias(used_wallet_alias)
+        JoinmarketService.set_associated_wallet(wallet)
     return redirect(url_for(f"{ {{ ext.id | camelcase}}Service.get_blueprint_name()}.settings_get"))
 {% endif %}
