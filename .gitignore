@@ -5,3 +5,6 @@ __pycache__
 *.egg-info
 .DS_Store
 node_modules
+btcd-conn.json
+elmd-conn.json
+prevent_mining
