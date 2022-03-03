@@ -13,6 +13,11 @@ logger = logging.getLogger(__name__)
 
 {{ ext.id }}_endpoint = {{ ext.id | camelcase}}Service.blueprint
 
+def ext():
+    ''' convenience for getting the extension-object'''
+    return app.specter.ext["{{ ext.id }}"]
+
+
 @{{ ext.id }}_endpoint.route("/")
 {% if not ext.isolated_client %}
 @login_required
