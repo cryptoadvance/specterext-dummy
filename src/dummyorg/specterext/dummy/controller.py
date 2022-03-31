@@ -3,6 +3,7 @@ from flask import redirect, render_template, request, url_for, flash
 from flask import current_app as app
 from flask_login import login_required, current_user
 
+from cryptoadvance.specter.specter import Specter
 from cryptoadvance.specter.services.controller import user_secret_decrypted_required
 from cryptoadvance.specter.user import User
 from cryptoadvance.specter.wallet import Wallet
@@ -13,9 +14,13 @@ logger = logging.getLogger(__name__)
 
 {{ ext.id }}_endpoint = {{ ext.id | camelcase}}Service.blueprint
 
-def ext():
+def ext() -> {{ext.id | camelcase }}Service:
     ''' convenience for getting the extension-object'''
     return app.specter.ext["{{ ext.id }}"]
+
+def specter() -> Specter:
+    ''' convenience for getting the extension-object'''
+    return app.specter
 
 
 @{{ ext.id }}_endpoint.route("/")
