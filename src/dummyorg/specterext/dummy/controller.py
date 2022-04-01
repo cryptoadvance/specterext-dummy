@@ -19,7 +19,7 @@ def ext() -> {{ext.id | camelcase }}Service:
     return app.specter.ext["{{ ext.id }}"]
 
 def specter() -> Specter:
-    ''' convenience for getting the extension-object'''
+    ''' convenience for getting the specter-object'''
     return app.specter
 
 
