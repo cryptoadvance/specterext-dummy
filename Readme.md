@@ -21,7 +21,8 @@ python3 -m cryptoadvance.specter ext gen
 # How to get this to production?
 The above setup is describing a Development Environment for your extension. If you ommit the `--config DevelopmentConfig`, it'll no longer work. We don't want in a ProductionConfig, that arbitrary files get imported by python.
 So in order to specify explicitely which extensions to load, there is a list in the [ProductionConfig](https://github.com/cryptoadvance/specter-desktop/blob/master/src/cryptoadvance/specter/config.py#L146-L150). So what you need to do is to first, switch the `devstatus` in your `DummyService`-class to production and then create your own relevant configuration and specify the extensions you want to load.
-You could do that e.g. by creating a file in `./dummy/appConfig.py` with this content:
+You could do that e.g. by creating a file in `./src/mynym/specterext/dummy/app_config.py` with this content:
+There is already an example in the folder when you generate the extension.
 ```
 from cryptoadvance.specter.config import ProductionConfig
 
