@@ -1,6 +1,6 @@
 import logging
 
-from cryptoadvance.specter.services.service import Service, devstatus_alpha, devstatus_prod
+from cryptoadvance.specter.services.service import Service, devstatus_alpha, devstatus_prod, devstatus_beta
 # A SpecterError can be raised and will be shown to the user as a red banner
 from cryptoadvance.specter.specter_error import SpecterError
 from flask import current_app as app
@@ -30,18 +30,23 @@ class {{ext.id | camelcase }}Service(Service):
     def callback_after_serverpy_init_app(self, scheduler: APScheduler):
         def every5seconds(hello, world="world"):
             with scheduler.app.app_context():
-                pass
-                #print(f"Called {hello} {world} every5seconds")
+                print(f"Called {hello} {world} every5seconds")
         # Here you can schedule regular jobs. triggers can be one of "interval", "date" or "cron"
         # Examples:
         # interval: https://apscheduler.readthedocs.io/en/3.x/modules/triggers/interval.html
         # scheduler.add_job("every5seconds4", every5seconds, trigger='interval', seconds=5, args=["hello"])
+        
         # Date: https://apscheduler.readthedocs.io/en/3.x/modules/triggers/date.html
         # scheduler.add_job("MyId", my_job, trigger='date', run_date=date(2009, 11, 6), args=['text'])
+        
         # cron: https://apscheduler.readthedocs.io/en/3.x/modules/triggers/cron.html
         # sched.add_job("anotherID", job_function, trigger='cron', day_of_week='mon-fri', hour=5, minute=30, end_date='2014-05-30')
+        
         # Maybe you should store the scheduler for later use:
         self.scheduler = scheduler
+        
+    # There might be other callbacks you're interested in. Check the callbacks.py in the specter-desktop source.
+    # if you are, create a method here which is "callback_" + callback_id
 
     @classmethod
     def get_associated_wallet(cls) -> Wallet:
