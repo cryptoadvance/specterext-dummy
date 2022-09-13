@@ -35,6 +35,10 @@
         <div class="linked_wallet">Linked wallet:
             <a class="explorer-link" href="{{ url_for('wallets_endpoint.addresses', wallet_alias=wallet.alias) }}">{{ wallet.name }}</a><br/>
         </div>
+        <div class="note">
+            The Transactions shown here are only the ones associated with your extension.<br>
+            To show all transactions, remove the <pre>service-id="<= ext.id =>"</pre> in transactions.jinja
+        </div>
 
     {% else %}
         <div class="no_linked_wallet">
