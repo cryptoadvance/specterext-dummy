@@ -68,7 +68,14 @@
     <div id="tx-popup" class="hidden"></div>
 
     <div class="footnote">
-        {{ _("<sup>*</sup>Only shows the withdrawals that this Specter instance is aware of.") }}
+        The Transactions shown here are only the ones associated with your extension.<br>
+        You can manually associate addresses to your extension in a specific address via the <br>
+        <button type="button" id="associate-btn" class="service-btn" >📥&nbsp;Associate with a service</button> button or you can do it programmatically via<br>
+        <pre>
+            # somewhere in your controller.py
+            ext().reserve_address(wallet, address, "some Label")
+        </pre>
+        To show all transactions in the list, remove the <pre>service-id="myext"</pre> in transactions.jinja
     </div>
 
 {% endblock %}
