@@ -26,7 +26,6 @@ def specter() -> Specter:
 @{{ ext.id }}_endpoint.route("/")
 {% if not ext.isolated_client %}
 @login_required
-@user_secret_decrypted_required
 {% endif %}
 def index():
     return render_template(
@@ -38,7 +37,6 @@ def index():
 
 @{{ ext.id }}_endpoint.route("/transactions")
 @login_required
-@user_secret_decrypted_required
 def transactions():
     # The wallet currently configured for ongoing autowithdrawals
     wallet: Wallet = {{ ext.id | camelcase }}Service.get_associated_wallet()
