@@ -50,7 +50,6 @@ def transactions():
 
 @{{ ext.id }}_endpoint.route("/settings", methods=["GET"])
 @login_required
-@user_secret_decrypted_required
 def settings_get():
     associated_wallet: Wallet = {{ ext.id | camelcase}}Service.get_associated_wallet()
 
@@ -67,7 +66,6 @@ def settings_get():
 
 @{{ ext.id }}_endpoint.route("/settings", methods=["POST"])
 @login_required
-@user_secret_decrypted_required
 def settings_post():
     show_menu = request.form["show_menu"]
     user = app.specter.user_manager.get_user()
