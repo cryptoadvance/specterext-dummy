@@ -18,6 +18,7 @@ class {{ext.id | camelcase }}Service(Service):
     has_blueprint = True
     blueprint_module = "{{ext.org}}.specterext.{{ext.id }}.controller"
     {% if ext.devicename %}devices = ["{{ext.org}}.specterext.{{ext.id }}.devices.{{ext.devicename }}"]{% endif %}
+    
     devstatus = devstatus_alpha
     isolated_client = {{ ext.isolated_client }}
 
