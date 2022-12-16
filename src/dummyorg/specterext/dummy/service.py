@@ -17,6 +17,7 @@ class {{ext.id | camelcase }}Service(Service):
     desc = "Where a {{ext.id }} grows bigger."
     has_blueprint = True
     blueprint_module = "{{ext.org}}.specterext.{{ext.id }}.controller"
+    {% if ext.devicename %}devices = ["cryptoadvance.specterext.electrum.devices.electrum"]{% end %}
     devstatus = devstatus_alpha
     isolated_client = {{ ext.isolated_client }}
 
