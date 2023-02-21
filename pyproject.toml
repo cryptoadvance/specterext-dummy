@@ -22,3 +22,8 @@ requires-python = ">=3.7,<4.0"
 
 dynamic = ["dependencies", "version"]
 
+classifiers =[
+    'Programming Language :: Python :: 3',
+    'Operating System :: OS Independent',
+    'Framework :: Flask',
+]
