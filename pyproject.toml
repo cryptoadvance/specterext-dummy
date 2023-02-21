@@ -16,4 +16,9 @@ description = "A description which should get changed"
 
 urls.Homepage = "https://github.com/{{ext.org}}/specterext-{{ext.id}}"
 
+readme = "README.md"
+
+requires-python = ">=3.7,<4.0"
+
+dynamic = ["dependencies", "version"]
 
