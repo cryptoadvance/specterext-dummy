@@ -1,1 +1,1 @@
-cryptoadvance.specter>={{ version }}
+# cryptoadvance.specter>={{ version }}
