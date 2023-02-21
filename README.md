@@ -1,5 +1,6 @@
 This is a template repository for a minimal extension which should get you started if you want to contribute to specter via an 
 extension.
+More information about Specter Extension Programming can be found [here](https://docs.specter.solutions/desktop/extensions/intro/).
 
 # Get it to run
 
