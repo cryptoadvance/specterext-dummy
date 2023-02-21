@@ -1,5 +1,5 @@
 [build-system]
 requires = [
-    "cryptoadvance.specter=={{version}}"
+    # "cryptoadvance.specter=={{version}}"
 ]
 build-backend = "setuptools.build_meta"
